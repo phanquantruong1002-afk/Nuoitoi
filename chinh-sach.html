@@ -5,21 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Chính sách</title>
   <meta name="description" content="Nuôi tôi — minh bạch 100%"/>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Ccircle cx='64' cy='64' r='64' fill='%2322c55e'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='72' fill='%23052e16' font-family='monospace'%3ENT%3C/text%3E%3C/svg%3E"/>
-  <link rel="preload" as="style" href="assets/style.css"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Ccircle cx='64' cy='64' r='64' fill='%234f46e5'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='72' fill='%23fff' font-family='monospace'%3ENT%3C/text%3E%3C/svg%3E"/>
   <link rel="stylesheet" href="assets/style.css"/>
   <script defer src="assets/app.js"></script>
 </head>
-<body>
+<body onload="">
 <header class="header">
   <div class="container">
     <nav class="nav">
-      <a href="index.html">Trang chủ</a>
-      <a href="sao-ke.html">Sao kê</a>
-      <a href="ung-ho.html">Ủng hộ</a>
-      <a href="lien-he.html">Liên hệ</a>
-      <a href="dieu-khoan.html">Điều khoản</a>
-      <a href="chinh-sach.html">Chính sách</a>
+      <a href="index.html" class="">Trang chủ</a>
+      <a href="sao-ke.html" class="">Sao kê</a>
+      <a href="ung-ho.html" class="">Ủng hộ</a>
+      <a href="lien-he.html" class="">Liên hệ</a>
+      <a href="dieu-khoan.html" class="">Điều khoản</a>
+      <a href="chinh-sach.html" class="active">Chính sách</a>
     </nav>
   </div>
 </header>
@@ -33,16 +32,23 @@
 </div>
 <footer class="footer">
   <div>© 2025 NuoiToi — demo để up GitHub Pages.</div>
-  <div class="small">* Popup sau 30s chỉ là ví dụ hiển thị.</div>
+  <div class="small">* Popup sau 30s random 1–10 triệu, đóng sẽ cộng vào "Tiền vào" (demo).</div>
 </footer>
 
+<!-- Bottom bar (mobile) -->
+<div class="bottom-bar">
+  <a class="bbtn" href="#top">🏠 Home</a>
+  <a class="bbtn" href="ung-ho.html">💳 QR</a>
+  <a class="bbtn" href="sao-ke.html">📄 Sao kê</a>
+</div>
+
 <!-- Popup -->
-<div class="modal-backdrop" onclick="closeModal()">
+<div class="modal-backdrop" onclick="NT.closeModal()">
   <div class="modal" onclick="event.stopPropagation()">
     <h3>Thông báo từ hệ thống</h3>
     <p>🎉 Vừa có người chuyển <strong id="popup-amount">2.000.000₫</strong> ủng hộ bạn.</p>
-    <p class="small">Ghi chú: Thông báo mẫu để test UI (không kết nối ngân hàng).</p>
-    <button class="btn" onclick="closeModal()">Đóng</button>
+    <p class="small">Random từ 1–10 triệu • Demo UI, chưa kết nối ngân hàng.</p>
+    <button class="btn" onclick="NT.closeModal()">Đóng</button>
   </div>
 </div>
 

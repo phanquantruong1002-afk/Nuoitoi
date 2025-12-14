@@ -1,21 +1,16 @@
 
-# NuoiToi — Static Site (GitHub Pages)
+# NuoiToi — Static Site v2 (GitHub Pages)
 
-- 100% static (HTML/CSS/JS), dễ up lên GitHub Pages.
-- Tự hiện **popup sau 30s**: “Có người chuyển 2.000.000₫”. (1 lần mỗi phiên)
-- Trang con đầy đủ:
-  - `index.html` (trang chủ, QR + info)
-  - `sao-ke.html` (bảng sao kê + **Tải CSV** để bill)
-  - `ung-ho.html` (QR + thông tin TK)
-  - `lien-he.html`
-  - `dieu-khoan.html`
-  - `chinh-sach.html`
+- Trang chủ thiết kế theo yêu cầu, **không dùng ảnh mẫu**; có các section: Lý do, Cam kết, So sánh, Donate, Kế hoạch chi tiêu, **Video YouTube** (link bạn cho).
+- **Popup sau 30s**: Random **1–10 triệu**; khi **đóng**, số tiền được **cộng vào "Tiền vào"** và cập nhật Số dư (trong phiên). Mở trang **Sao kê** sẽ thấy 1 dòng IN thêm (demo) và có thể **Tải CSV**.
+- Giao diện responsive cho web/mobile, có thanh điều hướng đáy trên mobile.
 
-## Hướng dẫn deploy
-1. Tạo repo mới trên GitHub, upload toàn bộ file.
-2. Vào **Settings → Pages → Build and deployment**:
-   - Source: **Deploy from a branch**
-   - Branch: **main**, folder **/** (root)
-3. Truy cập `https://<username>.github.io/<repo>/index.html`
+## Deploy
+1. Upload toàn bộ lên repo GitHub (root có `index.html`).  
+2. **Settings → Pages → Deploy from a branch**, chọn `main` + `/` (root).  
+3. Mở `https://<username>.github.io/<repo>/`.
 
-> Đổi hình QR: thay `assets/vietqr.png` bằng hình của bạn (giữ tên file).
+## Tuỳ chỉnh
+- Ảnh QR: thay `assets/vietqr.png` bằng ảnh của bạn.
+- Nội dung text: sửa trực tiếp trong `index.html`.
+- Nếu muốn popup hiển thị lại: xoá `sessionStorage` (F12 → Application → Session Storage) hoặc mở tab ẩn.
