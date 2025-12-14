@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Sao kê</title>
+  <meta name="description" content="Nuôi tôi — minh bạch 100%"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Ccircle cx='64' cy='64' r='64' fill='%2322c55e'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='72' fill='%23052e16' font-family='monospace'%3ENT%3C/text%3E%3C/svg%3E"/>
+  <link rel="preload" as="style" href="assets/style.css"/>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html">Trang chủ</a>
+      <a href="sao-ke.html">Sao kê</a>
+      <a href="ung-ho.html">Ủng hộ</a>
+      <a href="lien-he.html">Liên hệ</a>
+      <a href="dieu-khoan.html">Điều khoản</a>
+      <a href="chinh-sach.html">Chính sách</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+
+<h1>Sao kê</h1>
+<p class="small">Dữ liệu minh họa. Bạn có thể tải CSV ở dưới để "bill" trên GitHub.</p>
+<div class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+    <strong>Sao kê realtime (demo)</strong>
+    <div>
+      <button class="btn secondary" onclick="downloadCSV()">Tải CSV</button>
+    </div>
+  </div>
+  <hr/>
+  <div style="overflow:auto">
+    <table class="table">
+      <thead><tr><th>Mã GD</th><th>Thời gian</th><th>Loại</th><th>Số tiền</th><th>Ghi chú</th></tr></thead>
+      <tbody>
+        <tr><td>TRX001</td><td>2025-12-08 09:31</td><td><span class="badge">IN</span></td><td>50.000₫</td><td>Bạn A chuyển khoản nuôi tôi</td></tr>
+        <tr><td>TRX002</td><td>2025-12-08 12:15</td><td><span class="badge">OUT</span></td><td>25.000₫</td><td>Cơm trưa + canh</td></tr>
+        <tr><td>TRX003</td><td>2025-12-09 08:02</td><td><span class="badge">OUT</span></td><td>5.000₫</td><td>Sữa chua</td></tr>
+        <tr><td>TRX004</td><td>2025-12-10 19:44</td><td><span class="badge">IN</span></td><td>100.000₫</td><td>Bạn B ủng hộ</td></tr>
+        <tr><td>TRX005</td><td>2025-12-10 20:10</td><td><span class="badge">OUT</span></td><td>15.000₫</td><td>Rau + trứng</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+<footer class="footer">
+  <div>© 2025 NuoiToi — demo để up GitHub Pages.</div>
+  <div class="small">* Popup sau 30s chỉ là ví dụ hiển thị.</div>
+</footer>
+
+<!-- Popup -->
+<div class="modal-backdrop" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h3>Thông báo từ hệ thống</h3>
+    <p>🎉 Vừa có người chuyển <strong id="popup-amount">2.000.000₫</strong> ủng hộ bạn.</p>
+    <p class="small">Ghi chú: Thông báo mẫu để test UI (không kết nối ngân hàng).</p>
+    <button class="btn" onclick="closeModal()">Đóng</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+</body>
+</html>

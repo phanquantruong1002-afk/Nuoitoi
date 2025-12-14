@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Liên hệ</title>
+  <meta name="description" content="Nuôi tôi — minh bạch 100%"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Ccircle cx='64' cy='64' r='64' fill='%2322c55e'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='72' fill='%23052e16' font-family='monospace'%3ENT%3C/text%3E%3C/svg%3E"/>
+  <link rel="preload" as="style" href="assets/style.css"/>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html">Trang chủ</a>
+      <a href="sao-ke.html">Sao kê</a>
+      <a href="ung-ho.html">Ủng hộ</a>
+      <a href="lien-he.html">Liên hệ</a>
+      <a href="dieu-khoan.html">Điều khoản</a>
+      <a href="chinh-sach.html">Chính sách</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+
+<h1>Liên hệ</h1>
+<div class="card">
+  <p>Nếu bạn cần xác minh hoặc muốn hợp tác, hãy gửi email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+  <p class="small">Thay địa chỉ email bằng của bạn.</p>
+</div>
+
+</div>
+<footer class="footer">
+  <div>© 2025 NuoiToi — demo để up GitHub Pages.</div>
+  <div class="small">* Popup sau 30s chỉ là ví dụ hiển thị.</div>
+</footer>
+
+<!-- Popup -->
+<div class="modal-backdrop" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h3>Thông báo từ hệ thống</h3>
+    <p>🎉 Vừa có người chuyển <strong id="popup-amount">2.000.000₫</strong> ủng hộ bạn.</p>
+    <p class="small">Ghi chú: Thông báo mẫu để test UI (không kết nối ngân hàng).</p>
+    <button class="btn" onclick="closeModal()">Đóng</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+</body>
+</html>

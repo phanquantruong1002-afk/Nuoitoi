@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Ủng hộ</title>
+  <meta name="description" content="Nuôi tôi — minh bạch 100%"/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Ccircle cx='64' cy='64' r='64' fill='%2322c55e'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='72' fill='%23052e16' font-family='monospace'%3ENT%3C/text%3E%3C/svg%3E"/>
+  <link rel="preload" as="style" href="assets/style.css"/>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html">Trang chủ</a>
+      <a href="sao-ke.html">Sao kê</a>
+      <a href="ung-ho.html">Ủng hộ</a>
+      <a href="lien-he.html">Liên hệ</a>
+      <a href="dieu-khoan.html">Điều khoản</a>
+      <a href="chinh-sach.html">Chính sách</a>
+    </nav>
+  </div>
+</header>
+<div class="container">
+
+<h1>Ủng hộ</h1>
+<div class="grid" style="grid-template-columns:1fr 1fr">
+  <div class="card">
+    <h2>Quét VietQR</h2>
+    <img class="qr" src="assets/vietqr.png" alt="VietQR"/>
+  </div>
+  <div class="card">
+    <h2>Thông tin tài khoản</h2>
+    <p><strong>Chủ TK:</strong> PHAN QUAN TRUONG</p>
+    <p><strong>Ngân hàng:</strong> Ngân hàng TMCP Kiên Long</p>
+    <p><strong>Số tài khoản:</strong> 24243939</p>
+    <p class="small">Bạn có thể ghi nội dung chuyển khoản để mình dễ cảm ơn.</p>
+  </div>
+</div>
+
+</div>
+<footer class="footer">
+  <div>© 2025 NuoiToi — demo để up GitHub Pages.</div>
+  <div class="small">* Popup sau 30s chỉ là ví dụ hiển thị.</div>
+</footer>
+
+<!-- Popup -->
+<div class="modal-backdrop" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h3>Thông báo từ hệ thống</h3>
+    <p>🎉 Vừa có người chuyển <strong id="popup-amount">2.000.000₫</strong> ủng hộ bạn.</p>
+    <p class="small">Ghi chú: Thông báo mẫu để test UI (không kết nối ngân hàng).</p>
+    <button class="btn" onclick="closeModal()">Đóng</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+</body>
+</html>
