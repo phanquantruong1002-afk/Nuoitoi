@@ -1,16 +1,18 @@
 
-# NuoiToi — Static Site v2 (GitHub Pages)
+# NuoiToi — Polished Mobile‑First Static Site
 
-- Trang chủ thiết kế theo yêu cầu, **không dùng ảnh mẫu**; có các section: Lý do, Cam kết, So sánh, Donate, Kế hoạch chi tiêu, **Video YouTube** (link bạn cho).
-- **Popup sau 30s**: Random **1–10 triệu**; khi **đóng**, số tiền được **cộng vào "Tiền vào"** và cập nhật Số dư (trong phiên). Mở trang **Sao kê** sẽ thấy 1 dòng IN thêm (demo) và có thể **Tải CSV**.
-- Giao diện responsive cho web/mobile, có thanh điều hướng đáy trên mobile.
+- Không dùng React hay UI libs → chạy ổn trên GitHub Pages.
+- Responsive **mobile + desktop** (có bottom bar trên mobile).
+- **Popup sau 30s** random **1–10 triệu**; **đóng** popup sẽ cộng vào **Tiền vào** và cập nhật Số dư.
+- Trang **Sao kê** tự thêm dòng IN theo số tiền popup (trong phiên), có **Tải CSV** (revoking URL có delay để tránh lỗi).
+- Có embed **YouTube** ở cuối trang chủ.
 
-## Deploy
-1. Upload toàn bộ lên repo GitHub (root có `index.html`).  
-2. **Settings → Pages → Deploy from a branch**, chọn `main` + `/` (root).  
-3. Mở `https://<username>.github.io/<repo>/`.
+## Deploy (GitHub Pages)
+1. Upload toàn bộ lên repo GitHub.
+2. Settings → Pages → Deploy from a branch → `main` + `/ (root)`.
+3. Mở: `https://<username>.github.io/<repo>/index.html`.
 
-## Tuỳ chỉnh
-- Ảnh QR: thay `assets/vietqr.png` bằng ảnh của bạn.
-- Nội dung text: sửa trực tiếp trong `index.html`.
-- Nếu muốn popup hiển thị lại: xoá `sessionStorage` (F12 → Application → Session Storage) hoặc mở tab ẩn.
+## Tùy chỉnh
+- Đổi ảnh QR: thay `assets/vietqr.png`.
+- Đổi text: sửa `.html` tương ứng.
+- Đổi màu: `assets/style.css`.

@@ -3,39 +3,37 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Sao kê</title>
+  <title>Nuôi Tôi — Demo</title>
   <meta name="description" content="Nuôi tôi — minh bạch 100%"/>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Ccircle cx='64' cy='64' r='64' fill='%234f46e5'/%3E%3Ctext x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='72' fill='%23fff' font-family='monospace'%3ENT%3C/text%3E%3C/svg%3E"/>
+  <link rel="icon" href="assets/logo.svg"/>
   <link rel="stylesheet" href="assets/style.css"/>
   <script defer src="assets/app.js"></script>
 </head>
-<body onload="NT.maybeInjectRow();">
+<body>
 <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a href="index.html" class="">Trang chủ</a>
-      <a href="sao-ke.html" class="active">Sao kê</a>
-      <a href="ung-ho.html" class="">Ủng hộ</a>
-      <a href="lien-he.html" class="">Liên hệ</a>
-      <a href="dieu-khoan.html" class="">Điều khoản</a>
-      <a href="chinh-sach.html" class="">Chính sách</a>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+    <div class="brand"><img src="assets/logo.svg" alt="NT"/><strong>NUÔI TÔI • DEMO</strong></div>
+    <nav class="nav" aria-label="Điều hướng chính">
+      <a href="index.html">Trang chủ</a>
+      <a href="sao-ke.html">Sao kê</a>
+      <a href="ung-ho.html">Ủng hộ</a>
+      <a href="lien-he.html">Liên hệ</a>
+      <a href="dieu-khoan.html">Điều khoản</a>
+      <a href="chinh-sach.html">Chính sách</a>
     </nav>
   </div>
 </header>
 <div class="container">
 
 <h1>Sao kê</h1>
-<p class="small">Dữ liệu minh họa. Bạn có thể tải CSV ở dưới để "bill".</p>
+<p class="small">Dữ liệu minh họa. Dùng nút dưới để tải CSV (đã sửa revoke URL an toàn).</p>
 <div class="card">
-  <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;align-items:center">
     <strong>Sao kê realtime (demo)</strong>
-    <div>
-      <button class="btn secondary" onclick="NT.downloadCSV()">Tải CSV</button>
-    </div>
+    <button class="btn secondary" onclick="NT.downloadCSV()">Tải CSV</button>
   </div>
-  <hr/>
-  <div style="overflow:auto">
-    <table class="table">
+  <div style="overflow:auto;margin-top:8px">
+    <table class="table" aria-label="Bảng sao kê">
       <thead><tr><th>Mã GD</th><th>Thời gian</th><th>Loại</th><th>Số tiền</th><th>Ghi chú</th></tr></thead>
       <tbody id="sk-body">
         <tr><td>TRX001</td><td>2025-12-08 09:31</td><td><span class="badge">IN</span></td><td>50.000₫</td><td>Bạn A chuyển khoản nuôi tôi</td></tr>
@@ -45,35 +43,32 @@
         <tr><td>TRX005</td><td>2025-12-10 20:10</td><td><span class="badge">OUT</span></td><td>15.000₫</td><td>Rau + trứng</td></tr>
       </tbody>
     </table>
-
   </div>
-
 </div>
-
+<script> NT.injectPopupRowIfAny(); </script>
 
 </div>
 <footer class="footer">
-  <div>© 2025 NuoiToi — demo để up GitHub Pages.</div>
-  <div class="small">* Popup sau 30s random 1–10 triệu, đóng sẽ cộng vào "Tiền vào" (demo).</div>
+  <div>© 2025 NuoiToi — demo cho GitHub Pages.</div>
+  <div class="small">Popup sau 30s (random 1–10 triệu) • Đóng sẽ cộng vào Tiền vào (trong phiên).</div>
 </footer>
 
-<!-- Bottom bar (mobile) -->
-<div class="bottom-bar">
-  <a class="bbtn" href="#top">🏠 Home</a>
+<nav class="bottom" aria-label="Điều hướng nhanh (mobile)">
+  <a class="bbtn" href="index.html">🏠 Home</a>
   <a class="bbtn" href="ung-ho.html">💳 QR</a>
   <a class="bbtn" href="sao-ke.html">📄 Sao kê</a>
-</div>
+</nav>
 
-<!-- Popup -->
-<div class="modal-backdrop" onclick="NT.closeModal()">
+<div class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="popup-title" onclick="NT.closeModal()">
   <div class="modal" onclick="event.stopPropagation()">
-    <h3>Thông báo từ hệ thống</h3>
+    <h3 id="popup-title">Thông báo từ hệ thống</h3>
     <p>🎉 Vừa có người chuyển <strong id="popup-amount">2.000.000₫</strong> ủng hộ bạn.</p>
-    <p class="small">Random từ 1–10 triệu • Demo UI, chưa kết nối ngân hàng.</p>
-    <button class="btn" onclick="NT.closeModal()">Đóng</button>
+    <p class="small">Random 1–10 triệu • Demo UI, chưa kết nối ngân hàng.</p>
+    <button class="btn primary" onclick="NT.closeModal()">Đóng</button>
   </div>
 </div>
-
-<div class="toast" id="toast"></div>
+<script>
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ NT.closeModal(); }});
+</script>
 </body>
 </html>
