@@ -1,1 +1,1 @@
-<PLACEHOLDER_REACT_CODE>
+<paste content of App.jsx from canvas here>
